@@ -1,4 +1,4 @@
-import products from "./products.json";
+import products from "./products";
 
 export default function getProductsService() {
     return products;
