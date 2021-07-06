@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: VeloShop API
+  description: This API created for NodeJSForAWS project VeloShop
+  contact:
+    email: Serhii_Kondrashenko@epam.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://qsnju9olj2.execute-api.eu-west-1.amazonaws.com/shop/
+  description: AWS Production Server
+tags:
+- name: catalog
+  description: API For VeloShop Catalog
+paths:
+  /products:
+    get:
+      tags:
+      - catalog
+      summary: List all products
+      description: Returns list of available products
+      operationId: getProducts
+      responses:
+        "200":
+          description: List of all available products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+                x-content-type: application/json
+      x-swagger-router-controller: Catalog
+  /products/{productId}:
+    get:
+      tags:
+      - catalog
+      summary: Retrieve specific product
+      description: Returns product that matches exact id or error message that product
+        was not found
+      operationId: getProductById
+      parameters:
+      - name: productId
+        in: path
+        description: Id of the product to retrieve
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: giant-contend-3-2021
+      responses:
+        "200":
+          description: Product that matches productId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "404":
+          description: Product was not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404'
+      x-swagger-router-controller: Catalog
+components:
+  schemas:
+    Product:
+      required:
+      - count
+      - description
+      - id
+      - image
+      - price
+      - title
+      type: object
+      properties:
+        id:
+          type: string
+          format: code
+          example: giant-contend-3-2021
+        title:
+          type: string
+          example: Giant Contend 3 2021
+        description:
+          type: string
+          example: Some simple description of the awesome bike.
+        price:
+          type: integer
+          example: 150
+        count:
+          type: integer
+          example: 3
+        image:
+          type: string
+          format: url
+          example: https://www.sefiles.net/images/library/zoom/liv-alight-3-381596-1.jpg
+      example:
+        image: https://www.sefiles.net/images/library/zoom/liv-alight-3-381596-1.jpg
+        price: 150
+        count: 3
+        description: Some simple description of the awesome bike.
+        id: giant-contend-3-2021
+        title: Giant Contend 3 2021
+    inline_response_404:
+      required:
+      - message
+      type: object
+      properties:
+        message:
+          type: string
+          example: Product was not found!
