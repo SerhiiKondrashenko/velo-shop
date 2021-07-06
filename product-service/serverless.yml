@@ -7,7 +7,35 @@ provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
+  profile: default
+  stage: dev
+  region: eu-west-1
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: true
+
 
 functions:
-  hello:
-    handler: handler.hello
+  getProducts:
+    handler: handler.getProducts
+    events:
+      - http:
+          path: products
+          method: get
+          cors: true
+  getProductById:
+    handler: handler.getProductById
+    events:
+      - http:
+          path: products/{productId}
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                productId: true

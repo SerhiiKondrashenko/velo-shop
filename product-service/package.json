@@ -1,0 +1,16 @@
+{
+  "name": "product-service",
+  "version": "1.0.0",
+  "description": "Product lambda service for NodeJSForAWSCourse",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "sls deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-webpack": "^5.5.1",
+    "webpack": "^5.42.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
