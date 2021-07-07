@@ -1,15 +1,22 @@
-###NodeJS For AWS course back end lambda service
+#NodeJS For AWS course back end part
 
-Swagger Docs: https://app.swaggerhub.com/apis/SerhiiKondrashenko/VeloSop/1.0.0
+## Task 3
+
+OpenAPI description is available on
+[Swagger](https://app.swaggerhub.com/apis/SerhiiKondrashenko/VeloSop/1.0.0)
 
 
-####Api Methods
+###Api Methods:
 1. List of Products:
 
+```
 GET https://qsnju9olj2.execute-api.eu-west-1.amazonaws.com/shop/products
+```
 
-2. Get Product:
+2. Retrieve Product:
 
+```
 GET https://qsnju9olj2.execute-api.eu-west-1.amazonaws.com/shop/products/{Product ID}
-
 Example: https://qsnju9olj2.execute-api.eu-west-1.amazonaws.com/shop/products/giant-contend-3-2021
+```
+
