@@ -1,6 +1,25 @@
+import getProductByIdService from "../services/getProductByIdService";
 import getProductById from "./getProductById";
 
+jest.mock('../services/getProductByIdService');
+
+getProductByIdService.mockImplementation((productId) => {
+    if (productId === 'giant-contend-3-2021') {
+        return {
+            id: 'giant-contend-3-2021',
+            title: 'Giant Contend 3 2021',
+            descriptions: 'Smooth, fast, and fun. This versatile aluminum road bike has been revamped to give it a well-rounded performance ride quality. It’s the perfect choice to help you push the pace, ride more miles, and expand your road riding experience.',
+            price: 774,
+            count: 3,
+            image: 'https://www.sefiles.net/images/library/large/giant-contend-3-381485-1.jpg'
+        }
+    }
+
+    throw new Error('Product was not found!');
+});
+
 it('should return correct response', async () => {
+
     const response = await getProductById({
         pathParameters: {
             productId: 'giant-contend-3-2021'
