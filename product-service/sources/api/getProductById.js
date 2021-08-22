@@ -13,7 +13,7 @@ export default async ({pathParameters}) => {
             case INCORRECT_PRODUCT_ID:
                 return sendResponse(400, {message});
             default:
-                return sendResponse(500, "Server Error");
+                return sendResponse(500, {message: "Server Error"});
         }
     }
 };

@@ -17,7 +17,7 @@ export default async function getProductByIdService(productId) {
                 products 
             INNER JOIN 
                 stocks ON product_id = id 
-            WHERE id = $1::text
+            WHERE id = $1
         `, [productId]);
         if (rows.length === 0) {
             throw new Error(PRODUCT_NOT_FOUND);
