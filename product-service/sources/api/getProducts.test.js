@@ -3,7 +3,7 @@ import getProducts from "./getProducts";
 
 jest.mock('../services/getProductsService');
 
-getProductsService.mockImplementation(() => {
+getProductsService.mockImplementation(async () => {
     return [
         {
             id: 'giant-contend-3-2021',

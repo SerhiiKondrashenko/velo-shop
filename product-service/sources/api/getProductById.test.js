@@ -3,7 +3,7 @@ import getProductById from "./getProductById";
 
 jest.mock('../services/getProductByIdService');
 
-getProductByIdService.mockImplementation((productId) => {
+getProductByIdService.mockImplementation(async (productId) => {
     if (productId === 'giant-contend-3-2021') {
         return {
             id: 'giant-contend-3-2021',
