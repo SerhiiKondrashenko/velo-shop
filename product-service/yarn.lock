@@ -3908,6 +3908,11 @@ v8-to-istanbul@^8.0.0:
     convert-source-map "^1.6.0"
     source-map "^0.7.3"
 
+validatorjs@^3.22.1:
+  version "3.22.1"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/validatorjs/-/validatorjs-3.22.1.tgz#13dbbe6556cf4ab87759105d13b1d31a9a54ce54"
+  integrity sha1-E9u+ZVbPSrh3WRBdE7HTGppUzlQ=
+
 w3c-hr-time@^1.0.2:
   version "1.0.2"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/w3c-hr-time/-/w3c-hr-time-1.0.2.tgz#0a89cdf5cc15822df9c360543676963e0cc308cd"
