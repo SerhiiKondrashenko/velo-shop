@@ -1,5 +1,24 @@
 # NodeJS For AWS course Backend part
 
+## Task 4
+
+### 4.1 Created database instance and filled it with data
+### 4.2 Implemented mocked products and product api with real one:
+   Links:
+   GET - https://0fxzvnjz7e.execute-api.us-east-1.amazonaws.com/shop/products
+   GET - https://0fxzvnjz7e.execute-api.us-east-1.amazonaws.com/shop/products/{productId}
+### 4.3 Created api for product creation 
+   Link:
+   POST - https://0fxzvnjz7e.execute-api.us-east-1.amazonaws.com/shop/products
+
+### 4.4 Integrated Front-End part (https://d2m5ioz6hxitxt.cloudfront.net/)
+
+### Optional Tasks:
+   1. if product data is invalid service returns 400 status code
+   2. all lambdas return 500 status code on server fault
+   3. all lambdas do console.log arguments on each request 
+   4. service methods are using transactions
+
 ## Task 3
 
 OpenAPI description is available on

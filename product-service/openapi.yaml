@@ -9,7 +9,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 servers:
-- url: https://qsnju9olj2.execute-api.eu-west-1.amazonaws.com/shop/
+- url: https://0fxzvnjz7e.execute-api.us-east-1.amazonaws.com/shop/
   description: AWS Production Server
 tags:
 - name: catalog
