@@ -2,14 +2,23 @@ service: product-service
 
 frameworkVersion: '2'
 
-
 provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
   profile: default
   stage: shop
-  region: eu-west-1
+  region: us-east-1
+  vpc:
+    securityGroupIds:
+      - sg-920c168e
+    subnetIds:
+      - subnet-31bee657
+      - subnet-f1fcd9ae
+      - subnet-c5678f89
+      - subnet-d2785ef3
+      - subnet-35f39f04
+      - subnet-c4f9ebca
 
 plugins:
   - serverless-webpack
@@ -39,3 +48,28 @@ functions:
             parameters:
               paths:
                 productId: true
+  addProduct:
+    handler: handler.addProduct
+    events:
+      - http:
+          path: products
+          method: post
+          cors: true
+
+resources:
+  Resources:
+    AWSLambdaVPCAccessExecutionRole:
+      Type: AWS::IAM::ManagedPolicy
+      Properties:
+        Description: Creating policy for vpc connetion.
+        Roles:
+          - {"Ref" : "IamRoleLambdaExecution"}
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - ec2:CreateNetworkInterface
+                - ec2:DescribeNetworkInterfaces
+                - ec2:DeleteNetworkInterface
+              Resource: "*"
