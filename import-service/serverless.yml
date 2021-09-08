@@ -9,6 +9,17 @@ provider:
   profile: default
   stage: shop
   region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action: 's3:ListBucket'
+          Resource:
+            - 'arn:aws:s3:::nodejs-aws-import-service-bucket'
+        - Effect: 'Allow'
+          Action: 's3:*'
+          Resources:
+            - 'arn:aws:s3:::nodejs-aws-import-service-bucket/*'
 
 plugins:
   - serverless-webpack
@@ -19,3 +30,23 @@ custom:
     includeModules: true
 
 functions:
+  importProductsFile:
+    handler: handler.importProductsFile
+    events:
+      - http:
+          path: import
+          method: get
+          request:
+            parameters:
+              querystring:
+                name: true
+          cors: true
+  impoertFileParser:
+    handler: handler.importFileParser
+    events:
+      - s3:
+          bucket: 'nodejs-aws-import-service-bucket'
+          event: 's3:ObjectCreated:*'
+          rules:
+            - prefix: 'uploaded/'
+          existing: true
