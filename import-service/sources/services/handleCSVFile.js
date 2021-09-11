@@ -32,7 +32,7 @@ async function moveToParsed(name) {
     await s3.copyObject({
         Bucket: BUCKET_NAME,
         CopySource: BUCKET_NAME + '/' + name,
-        Key: "/parsed"
+        Key: name.replace("uploaded", "parsed")
     }).promise();
 
     console.log('File copied to ', "/parsed");
