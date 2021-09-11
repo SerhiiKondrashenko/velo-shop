@@ -18,7 +18,7 @@ provider:
             - 'arn:aws:s3:::nodejs-aws-import-service-bucket'
         - Effect: 'Allow'
           Action: 's3:*'
-          Resources:
+          Resource:
             - 'arn:aws:s3:::nodejs-aws-import-service-bucket/*'
 
 plugins:
@@ -38,7 +38,7 @@ functions:
           method: get
           request:
             parameters:
-              querystring:
+              querystrings:
                 name: true
           cors: true
   impoertFileParser:
