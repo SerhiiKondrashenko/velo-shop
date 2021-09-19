@@ -20,6 +20,13 @@ provider:
           Action: 's3:*'
           Resource:
             - 'arn:aws:s3:::nodejs-aws-import-service-bucket/*'
+        - Effect: 'Allow'
+          Actions: 'sqs:*'
+          Recources:
+            - Fn::GetAtt: [ SQSQueue, Arn ]
+  environment:
+    SQS_URL:
+      Ref: SQSQueue
 
 plugins:
   - serverless-webpack
@@ -41,7 +48,7 @@ functions:
               querystrings:
                 name: true
           cors: true
-  impoertFileParser:
+  importFileParser:
     handler: handler.importFileParser
     events:
       - s3:
@@ -50,3 +57,10 @@ functions:
           rules:
             - prefix: 'uploaded/'
           existing: true
+
+resources:
+  Resources:
+    SQSQueue:
+      Type: AWS:SQS:Queue
+      Properties:
+        QueueName: catalogItemsQueue
