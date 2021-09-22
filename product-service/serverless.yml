@@ -19,6 +19,22 @@ provider:
       - subnet-d2785ef3
       - subnet-35f39f04
       - subnet-c4f9ebca
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Actions: 'sqs:*'
+          Resources:
+            - Fn::GetAtt: [ SQSQueue, Arn ]
+        - Effect: 'Allow'
+          Actions: 'sns:*'
+          Resources:
+            Ref: SNSTopic
+  environment:
+    SQS_URL:
+      Ref: SQSQueue
+    SNS_ARN:
+      Ref: SNSTopic
 
 plugins:
   - serverless-webpack
@@ -55,6 +71,15 @@ functions:
           path: products
           method: post
           cors: true
+  catalogBatchProcess:
+    handler: handler.catalogBatchProcess
+    events:
+      - sqs:
+          batchSize: 5
+          arn:
+            Fn:GetAtt:
+              - SQSQueue
+              - Arn
 
 resources:
   Resources:
@@ -73,3 +98,18 @@ resources:
                 - ec2:DescribeNetworkInterfaces
                 - ec2:DeleteNetworkInterface
               Resource: "*"
+    SQSQueue:
+      Type: AWS:SQS:Queue
+      Properties:
+        QueueName: catalogItemsQueue
+    SNSTopic:
+      Type: AWS:SNS:Topic
+      Properties:
+        TopicName: PRODUCT_CREATED
+    SNSSubscribption:
+      Type: AWS:SNS:Subscription
+      Properties:
+        Endpoint: anaira682190@gmail.com
+        Protocol: email
+        TopicArn:
+          Ref: SNSTopic

@@ -1091,19 +1091,33 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@sinonjs/commons@^1.7.0":
+"@sinonjs/commons@^1.6.0", "@sinonjs/commons@^1.7.0", "@sinonjs/commons@^1.8.3":
   version "1.8.3"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
   integrity sha1-OALd0hpQqUm2ch3dcto25n5/Gy0=
   dependencies:
     type-detect "4.0.8"
 
-"@sinonjs/fake-timers@^7.0.2":
+"@sinonjs/fake-timers@^7.0.2", "@sinonjs/fake-timers@^7.0.4", "@sinonjs/fake-timers@^7.1.2":
   version "7.1.2"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/@sinonjs/fake-timers/-/fake-timers-7.1.2.tgz#2524eae70c4910edccf99b2f4e6efc5894aff7b5"
   integrity sha1-JSTq5wxJEO3M+ZsvTm78WJSv97U=
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@sinonjs/samsam@^6.0.2":
+  version "6.0.2"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/@sinonjs/samsam/-/samsam-6.0.2.tgz#a0117d823260f282c04bff5f8704bdc2ac6910bb"
+  integrity sha1-oBF9gjJg8oLAS/9fhwS9wqxpELs=
+  dependencies:
+    "@sinonjs/commons" "^1.6.0"
+    lodash.get "^4.4.2"
+    type-detect "^4.0.8"
+
+"@sinonjs/text-encoding@^0.7.1":
+  version "0.7.1"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
+  integrity sha1-jaXGUwkVZT86Hzj9XxAdjD+AecU=
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -1523,6 +1537,30 @@ at-least-node@^1.0.0:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha1-YCzUtG6EStTv/JKoARo8RuAjjcI=
 
+aws-sdk-mock@^5.3.0:
+  version "5.3.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/aws-sdk-mock/-/aws-sdk-mock-5.3.0.tgz#6a6433af40b7799322b86e57b480284f9749d9ce"
+  integrity sha1-amQzr0C3eZMiuG5XtIAoT5dJ2c4=
+  dependencies:
+    aws-sdk "^2.928.0"
+    sinon "^11.1.1"
+    traverse "^0.6.6"
+
+aws-sdk@^2.928.0, aws-sdk@^2.992.0:
+  version "2.992.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/aws-sdk/-/aws-sdk-2.992.0.tgz#3d8f663727cf3ea62a794a7499ae001fe6256abb"
+  integrity sha1-PY9mNyfPPqYqeUp0ma4AH+Ylars=
+  dependencies:
+    buffer "4.9.2"
+    events "1.1.1"
+    ieee754 "1.1.13"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
+
 babel-jest@^27.0.6:
   version "27.0.6"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/babel-jest/-/babel-jest-27.0.6.tgz#e99c6e0577da2655118e3608b68761a5a69bd0d8"
@@ -1620,7 +1658,7 @@ balanced-match@^1.0.0:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha1-6D46fj8wCzTLnYf2FfoMvzV2kO4=
 
-base64-js@^1.3.1:
+base64-js@^1.0.2, base64-js@^1.3.1:
   version "1.5.1"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha1-GxtEAWClv3rUC2UPCVljSBkDkwo=
@@ -1702,6 +1740,15 @@ buffer-writer@2.0.0:
   version "2.0.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/buffer-writer/-/buffer-writer-2.0.0.tgz#ce7eb81a38f7829db09c873f2fbb792c0c98ec04"
   integrity sha1-zn64Gjj3gp2wnIc/L7t5LAyY7AQ=
+
+buffer@4.9.2:
+  version "4.9.2"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/buffer/-/buffer-4.9.2.tgz#230ead344002988644841ab0244af8c44bbe3ef8"
+  integrity sha1-Iw6tNEACmIZEhBqwJEr4xEu+Pvg=
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
+    isarray "^1.0.0"
 
 buffer@^5.5.0:
   version "5.7.1"
@@ -1986,6 +2033,11 @@ diff@^4.0.1:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
   integrity sha1-YPOuy4nV+uUgwRqhnvwruYKq3n0=
 
+diff@^5.0.0:
+  version "5.0.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/diff/-/diff-5.0.0.tgz#7ed6ad76d859d030787ec35855f5b1daf31d852b"
+  integrity sha1-ftatdthZ0DB4fsNYVfWx2vMdhSs=
+
 domexception@^2.0.1:
   version "2.0.1"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/domexception/-/domexception-2.0.1.tgz#fb44aefba793e1574b0af6aed2801d057529f304"
@@ -2089,6 +2141,11 @@ esutils@^2.0.2:
   version "2.0.3"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha1-dNLrTeC42hKTcRkQ1Qd1ubcQ72Q=
+
+events@1.1.1:
+  version "1.1.1"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
+  integrity sha1-nr23Y1rQmccNzEwqH1AEKI6L2SQ=
 
 events@^3.2.0:
   version "3.3.0"
@@ -2327,7 +2384,12 @@ iconv-lite@0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-ieee754@^1.1.13:
+ieee754@1.1.13:
+  version "1.1.13"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/ieee754/-/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
+  integrity sha1-7BaFWOlaoYH9h9N/VcMrvLZwi4Q=
+
+ieee754@^1.1.13, ieee754@^1.1.4:
   version "1.2.1"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
   integrity sha1-jrehCmP/8l0VpXsAFYbRd9Gw01I=
@@ -2409,7 +2471,12 @@ is-typedarray@^1.0.0:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
-isarray@~1.0.0:
+isarray@0.0.1:
+  version "0.0.1"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+
+isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
@@ -2869,6 +2936,11 @@ jest@^27.0.6:
     import-local "^3.0.2"
     jest-cli "^27.0.6"
 
+jmespath@0.15.0:
+  version "0.15.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/jmespath/-/jmespath-0.15.0.tgz#a3f222a9aae9f966f5d27c796510e28091764217"
+  integrity sha1-o/Iiqarp+Wb10nx5ZRDigJF2Qhc=
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -2951,6 +3023,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+just-extend@^4.0.2:
+  version "4.2.1"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/just-extend/-/just-extend-4.2.1.tgz#ef5e589afb61e5d66b24eca749409a8939a8c744"
+  integrity sha1-715Ymvth5dZrJOynSUCaiTmox0Q=
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
@@ -3007,6 +3084,11 @@ lodash.flatten@^4.4.0:
   version "4.4.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
   integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
@@ -3105,6 +3187,17 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
+
+nise@^5.1.0:
+  version "5.1.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/nise/-/nise-5.1.0.tgz#713ef3ed138252daef20ec035ab62b7a28be645c"
+  integrity sha1-cT7z7ROCUtrvIOwDWrYreii+ZFw=
+  dependencies:
+    "@sinonjs/commons" "^1.7.0"
+    "@sinonjs/fake-timers" "^7.0.4"
+    "@sinonjs/text-encoding" "^0.7.1"
+    just-extend "^4.0.2"
+    path-to-regexp "^1.7.0"
 
 node-int64@^0.4.0:
   version "0.4.0"
@@ -3240,6 +3333,13 @@ path-parse@^1.0.6:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=
 
+path-to-regexp@^1.7.0:
+  version "1.8.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/path-to-regexp/-/path-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
+  integrity sha1-iHs7qdhDk+h6CgufTLdWGYtTVIo=
+  dependencies:
+    isarray "0.0.1"
+
 pg-connection-string@^2.5.0:
   version "2.5.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/pg-connection-string/-/pg-connection-string-2.5.0.tgz#538cadd0f7e603fc09a12590f3b8a452c2c0cf34"
@@ -3370,10 +3470,20 @@ psl@^1.1.33:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/psl/-/psl-1.8.0.tgz#9326f8bcfb013adcc005fdff056acce020e51c24"
   integrity sha1-kyb4vPsBOtzABf3/BWrM4CDlHCQ=
 
+punycode@1.3.2:
+  version "1.3.2"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/punycode/-/punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d"
+  integrity sha1-llOgNvt8HuQjQvIyXM7v6jkmxI0=
+
 punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
+
+querystring@0.2.0:
+  version "0.2.0"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
+  integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
 randombytes@^2.1.0:
   version "2.1.0"
@@ -3511,6 +3621,16 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
+sax@1.2.1:
+  version "1.2.1"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
+  integrity sha1-e45lYZCyKOgaZq6nSEgNgozS03o=
+
+sax@>=0.6.0:
+  version "1.2.4"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
+  integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
+
 saxes@^5.0.1:
   version "5.0.1"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/saxes/-/saxes-5.0.1.tgz#eebab953fa3b7608dbe94e5dadb15c888fa6696d"
@@ -3582,6 +3702,18 @@ signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.3"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
+
+sinon@^11.1.1:
+  version "11.1.2"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/sinon/-/sinon-11.1.2.tgz#9e78850c747241d5c59d1614d8f9cbe8840e8674"
+  integrity sha1-nniFDHRyQdXFnRYU2PnL6IQOhnQ=
+  dependencies:
+    "@sinonjs/commons" "^1.8.3"
+    "@sinonjs/fake-timers" "^7.1.2"
+    "@sinonjs/samsam" "^6.0.2"
+    diff "^5.0.0"
+    nise "^5.1.0"
+    supports-color "^7.2.0"
 
 sisteransi@^1.0.5:
   version "1.0.5"
@@ -3695,7 +3827,7 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-supports-color@^7.0.0, supports-color@^7.1.0:
+supports-color@^7.0.0, supports-color@^7.1.0, supports-color@^7.2.0:
   version "7.2.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
   integrity sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
@@ -3814,6 +3946,11 @@ tr46@^2.1.0:
   dependencies:
     punycode "^2.1.1"
 
+traverse@^0.6.6:
+  version "0.6.6"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
+  integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
+
 "ts-node@>= 8.3.0":
   version "10.0.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/ts-node/-/ts-node-10.0.0.tgz#05f10b9a716b0b624129ad44f0ea05dac84ba3be"
@@ -3837,7 +3974,7 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-type-detect@4.0.8:
+type-detect@4.0.8, type-detect@^4.0.8:
   version "4.0.8"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=
@@ -3894,10 +4031,23 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+url@0.10.3:
+  version "0.10.3"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/url/-/url-0.10.3.tgz#021e4d9c7705f21bbf37d03ceb58767402774c64"
+  integrity sha1-Ah5NnHcF8hu/N9A861h2dAJ3TGQ=
+  dependencies:
+    punycode "1.3.2"
+    querystring "0.2.0"
+
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+uuid@3.3.2:
+  version "3.3.2"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
 
 v8-to-istanbul@^8.0.0:
   version "8.0.0"
@@ -4060,6 +4210,19 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha1-auc+Bt5NjG5H+fsYH3jWSK1FfGo=
+
+xml2js@0.4.19:
+  version "0.4.19"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
+  integrity sha1-aGwg8hMgnpSr8NG88e+qKRx4J6c=
+  dependencies:
+    sax ">=0.6.0"
+    xmlbuilder "~9.0.1"
+
+xmlbuilder@~9.0.1:
+  version "9.0.7"
+  resolved "https://bams-aws.refinitiv.com/artifactory/api/npm/default.npm.global/xmlbuilder/-/xmlbuilder-9.0.7.tgz#132ee63d2ec5565c557e20f4c22df9aca686b10d"
+  integrity sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=
 
 xmlchars@^2.2.0:
   version "2.2.0"

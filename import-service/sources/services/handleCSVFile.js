@@ -19,6 +19,9 @@ async function parseCSV(name) {
             sqs.sendMessage({
                 QueueUrl: process.env.SQS_URL,
                 MessageBody: JSON.parse(product),
+            }, () => {
+                const { name } = product;
+                console.log('Send message for product: ', name);
             })
         })
         .on("end", () => {
