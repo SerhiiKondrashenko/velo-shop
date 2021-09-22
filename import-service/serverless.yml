@@ -21,8 +21,8 @@ provider:
           Resource:
             - 'arn:aws:s3:::nodejs-aws-import-service-bucket/*'
         - Effect: 'Allow'
-          Actions: 'sqs:*'
-          Recources:
+          Action: 'sqs:*'
+          Resource:
             - Fn::GetAtt: [ SQSQueue, Arn ]
   environment:
     SQS_URL:
@@ -61,6 +61,6 @@ functions:
 resources:
   Resources:
     SQSQueue:
-      Type: AWS:SQS:Queue
+      Type: AWS::SQS::Queue
       Properties:
         QueueName: catalogItemsQueue
