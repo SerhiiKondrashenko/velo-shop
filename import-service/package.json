@@ -1,0 +1,26 @@
+{
+  "name": "import-service",
+  "version": "1.0.0",
+  "description": "Import lambda service for NodeJsForAWSCourse",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "sls deploy",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6",
+    "serverless-webpack": "^5.5.1",
+    "webpack": "^5.42.1",
+    "webpack-node-externals": "^3.0.0",
+    "aws-sdk-mock": "^5.2.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.983.0",
+    "csv-parser": "^3.0.0"
+  }
+}

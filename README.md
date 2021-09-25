@@ -1,5 +1,17 @@
 # NodeJS For AWS course Backend part
 
+## Task 5
+
+### 5.1 Added import service function available on /import path and returns Signed URL
+   Link: https://w6hdhq9c2f.execute-api.us-east-1.amazonaws.com/shop/import?name=importedFile 
+
+### 5.2 Added importFileParser lambda which is triggered on file uploading and parsing cvs file
+### Optional task:
+   1. async/await is used in lambda functions
+   2. importProductsFile is covered by unit test
+   3. parsed files moved to parsed folder
+
+
 ## Task 4
 
 ### 4.1 Created database instance and filled it with data
