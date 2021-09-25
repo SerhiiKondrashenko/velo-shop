@@ -23,16 +23,10 @@ provider:
     role:
       statements:
         - Effect: 'Allow'
-          Actions: 'sqs:*'
-          Resources:
-            - Fn::GetAtt: [ SQSQueue, Arn ]
-        - Effect: 'Allow'
-          Actions: 'sns:*'
-          Resources:
+          Action: 'sns:*'
+          Resource:
             Ref: SNSTopic
   environment:
-    SQS_URL:
-      Ref: SQSQueue
     SNS_ARN:
       Ref: SNSTopic
 
@@ -76,10 +70,7 @@ functions:
     events:
       - sqs:
           batchSize: 5
-          arn:
-            Fn:GetAtt:
-              - SQSQueue
-              - Arn
+          arn: arn:aws:sqs:us-east-1:357231206761:catalogItemsQueue
 
 resources:
   Resources:
@@ -98,16 +89,12 @@ resources:
                 - ec2:DescribeNetworkInterfaces
                 - ec2:DeleteNetworkInterface
               Resource: "*"
-    SQSQueue:
-      Type: AWS:SQS:Queue
-      Properties:
-        QueueName: catalogItemsQueue
     SNSTopic:
-      Type: AWS:SNS:Topic
+      Type: AWS::SNS::Topic
       Properties:
         TopicName: PRODUCT_CREATED
     SNSSubscribption:
-      Type: AWS:SNS:Subscription
+      Type: AWS::SNS::Subscription
       Properties:
         Endpoint: anaira682190@gmail.com
         Protocol: email

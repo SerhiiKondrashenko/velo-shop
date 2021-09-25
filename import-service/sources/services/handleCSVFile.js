@@ -18,10 +18,10 @@ async function parseCSV(name) {
         .on("data", (product) => {
             sqs.sendMessage({
                 QueueUrl: process.env.SQS_URL,
-                MessageBody: JSON.parse(product),
+                MessageBody: JSON.stringify(product),
             }, () => {
-                const { name } = product;
-                console.log('Send message for product: ', name);
+                const { title } = product;
+                console.log('Send message for product: ', title);
             })
         })
         .on("end", () => {
