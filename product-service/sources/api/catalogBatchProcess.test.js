@@ -48,9 +48,10 @@ it('should add products to database', async () => {
 
 it('should publish notification', async () => {
     const mock = jest.fn((params, cb) => {
-        const {Subject, Message} = params;
-        expect(Subject).toBe('Products were added to database');
-        expect(Message).toBe('Products list was successfully added');
+        const {Subject, Message, MessageAttributes} = params;
+        const title = MessageAttributes.title.StringValue;
+        expect(Subject).toBe('Product successfully added to database');
+        expect(Message).toBe(`Product ${title} were added to database`);
         cb(null, {status: 'Message successfully sent'});
     });
 
@@ -66,5 +67,5 @@ it('should publish notification', async () => {
         ]
     }
     await catalogBatchProcess(event);
-    expect(mock.mock.calls.length).toBe(1);
+    expect(mock.mock.calls.length).toBe(5);
 });

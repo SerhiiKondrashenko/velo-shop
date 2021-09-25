@@ -100,3 +100,14 @@ resources:
         Protocol: email
         TopicArn:
           Ref: SNSTopic
+    SNSSpecialProductsSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: anaira682199@gmail.com
+        Protocol: email
+        TopicArn:
+          Ref: SNSTopic
+        FilterPolicy:
+          title:
+            - 'Specialized Diverge Comp E5'
+            - 'Giant Contend AR 3'
