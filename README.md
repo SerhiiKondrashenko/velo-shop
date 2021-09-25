@@ -1,5 +1,16 @@
 # NodeJS For AWS course Backend part
 
+## Task 6 
+
+### 6.1 Created catalogBatchProcess in the resources section in serverless.yml
+### 6.2 Added SQS queue called catalogItemsQueue in serverless.yml and updated importFileParser to send each
+CSV record into SQS
+### 6.3 Added SNS notification when catalogBatchProcess creates product
+
+### Optional task:
+   1. Added test coverage for catalogBatchProcess
+   2. Added additional subscription for createdProduct topic and added title filtering for another email
+
 ## Task 5
 
 ### 5.1 Added import service function available on /import path and returns Signed URL

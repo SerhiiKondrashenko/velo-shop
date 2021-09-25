@@ -23,10 +23,10 @@ provider:
         - Effect: 'Allow'
           Action: 'sqs:*'
           Resource:
-            - Fn::GetAtt: [ SQSQueue, Arn ]
+            - Fn::GetAtt: [ catalogItemsQueue, Arn ]
   environment:
     SQS_URL:
-      Ref: SQSQueue
+      Ref: catalogItemsQueue
 
 plugins:
   - serverless-webpack
@@ -60,7 +60,7 @@ functions:
 
 resources:
   Resources:
-    SQSQueue:
+    catalogItemsQueue:
       Type: AWS::SQS::Queue
       Properties:
         QueueName: catalogItemsQueue

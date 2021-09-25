@@ -25,10 +25,10 @@ provider:
         - Effect: 'Allow'
           Action: 'sns:*'
           Resource:
-            Ref: SNSTopic
+            Ref: createProductTopic
   environment:
     SNS_ARN:
-      Ref: SNSTopic
+      Ref: createProductTopic
 
 plugins:
   - serverless-webpack
@@ -89,24 +89,24 @@ resources:
                 - ec2:DescribeNetworkInterfaces
                 - ec2:DeleteNetworkInterface
               Resource: "*"
-    SNSTopic:
+    createProductTopic:
       Type: AWS::SNS::Topic
       Properties:
         TopicName: PRODUCT_CREATED
-    SNSSubscribption:
+    basicSubscription:
       Type: AWS::SNS::Subscription
       Properties:
         Endpoint: anaira682190@gmail.com
         Protocol: email
         TopicArn:
-          Ref: SNSTopic
-    SNSSpecialProductsSubscription:
+          Ref: createProductTopic
+    specialSubscription:
       Type: AWS::SNS::Subscription
       Properties:
         Endpoint: anaira682199@gmail.com
         Protocol: email
         TopicArn:
-          Ref: SNSTopic
+          Ref: createProductTopic
         FilterPolicy:
           title:
             - 'Specialized Diverge Comp E5'
