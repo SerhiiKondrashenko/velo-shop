@@ -1,11 +1,11 @@
 import {AWS_REGION, BUCKET_NAME} from "../configuration";
-import {S3} from "aws-sdk";
+import {S3, SQS} from "aws-sdk";
 import * as csvParser from "csv-parser";
 
 
 async function parseCSV(name) {
-    const list = [];
-    const s3 = new S3({region: AWS_REGION})
+    const s3 = new S3({region: AWS_REGION});
+    const sqs = new SQS({region: AWS_REGION});
 
     console.log('Parsing CSV');
 
@@ -15,10 +15,17 @@ async function parseCSV(name) {
     })
         .createReadStream()
         .pipe(csvParser())
-        .on("data", (data) => list.push(data))
+        .on("data", (product) => {
+            sqs.sendMessage({
+                QueueUrl: process.env.SQS_URL,
+                MessageBody: JSON.stringify(product),
+            }, () => {
+                const { title } = product;
+                console.log('Send message for product: ', title);
+            })
+        })
         .on("end", () => {
             console.log('Parse finished');
-            console.log(list);
         })
         .on("error", () => {
             console.error("CSV Parse error")

@@ -19,6 +19,16 @@ provider:
       - subnet-d2785ef3
       - subnet-35f39f04
       - subnet-c4f9ebca
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action: 'sns:*'
+          Resource:
+            Ref: createProductTopic
+  environment:
+    SNS_ARN:
+      Ref: createProductTopic
 
 plugins:
   - serverless-webpack
@@ -55,6 +65,12 @@ functions:
           path: products
           method: post
           cors: true
+  catalogBatchProcess:
+    handler: handler.catalogBatchProcess
+    events:
+      - sqs:
+          batchSize: 5
+          arn: arn:aws:sqs:us-east-1:357231206761:catalogItemsQueue
 
 resources:
   Resources:
@@ -73,3 +89,25 @@ resources:
                 - ec2:DescribeNetworkInterfaces
                 - ec2:DeleteNetworkInterface
               Resource: "*"
+    createProductTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: PRODUCT_CREATED
+    basicSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: anaira682190@gmail.com
+        Protocol: email
+        TopicArn:
+          Ref: createProductTopic
+    specialSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: anaira682199@gmail.com
+        Protocol: email
+        TopicArn:
+          Ref: createProductTopic
+        FilterPolicy:
+          title:
+            - 'Specialized Diverge Comp E5'
+            - 'Giant Contend AR 3'
