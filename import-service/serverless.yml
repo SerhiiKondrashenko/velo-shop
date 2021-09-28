@@ -30,6 +30,7 @@ provider:
 
 plugins:
   - serverless-webpack
+  - serverless-pseudo-parameters
 
 custom:
   webpack:
@@ -48,6 +49,12 @@ functions:
               querystrings:
                 name: true
           cors: true
+          authorizer:
+            name: requestAuthorizer
+            identitySource: method.request.header.Authorization
+            type: token
+            resultTtlInSeconds: 0
+            arn: "arn:aws:lambda:#>{AWS::Region}:#>{AWS::AccountId}:function:authorization-service-dev-basicAuthorizer"
   importFileParser:
     handler: handler.importFileParser
     events:
