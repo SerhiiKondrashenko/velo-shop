@@ -25,7 +25,7 @@ provider:
 
 functions:
   basicAuthorizer:
-    hander: handler.basicAuthorizerHandler
-    environmet:
+    handler: handler.basicAuthorizerHandler
+    environment:
       username: ${self:custom.login}
       password: ${env:${self:custom.login}}
