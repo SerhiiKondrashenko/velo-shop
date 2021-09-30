@@ -1,5 +1,13 @@
 # NodeJS For AWS course Backend part
 
+## Task 7
+### 7.1 Added authorization-service
+### 7.2 Integrated authorization with import service
+### 7.3 Added frontend logic to send authorization token during uploading file with products
+
+### Optional task:
+   1. Added alert handlers for 401 and 403 statuses
+
 ## Task 6 
 
 ### 6.1 Created catalogBatchProcess in the resources section in serverless.yml
