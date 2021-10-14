@@ -1,5 +1,10 @@
 # NodeJS For AWS course Backend part
 
+## Task 8
+### 8.1 Added dockerfile https://github.com/SerhiiKondrashenko/rs-cart-api/tree/task8
+### 8.2 Deployed app to elastic beanstalk and integrated front-end app with beanstalk
+
+
 ## Task 7
 ### 7.1 Added authorization-service
 ### 7.2 Integrated authorization with import service
