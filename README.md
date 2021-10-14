@@ -2,7 +2,7 @@
 
 ## Task 8
 ### 8.1 Added dockerfile https://github.com/SerhiiKondrashenko/rs-cart-api/tree/task8
-### 8.2 Deployed app to elastic beanstalk and integrated front-end app with beanstalk
+### 8.2 Deployed app to elastic beanstalk and integrated front-end app with beanstalk (https://github.com/SerhiiKondrashenko/shop-react-redux-cloudfront/pull/3/commits)
 
 
 ## Task 7
